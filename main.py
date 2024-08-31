@@ -21,8 +21,8 @@ chat = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
 SYSTEM_TEMPLATE = """
 You are a student at IIT ISM Dhanbad. Answer the user's questions based on the below context. 
-If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know, please ask only related to IIT ISM Dhanbad":
-
+If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know"
+But, if the context provide any information use that to answer the question along with your own knowledge in 75:25 ratio.
 <context>
 {context}
 </context>
