@@ -16,13 +16,13 @@ os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY')
 index = pc.Index("ismgpt")
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 vectorstore = PineconeVectorStore(index,embeddings)
-retriever = vectorstore.as_retriever(k=2)
+retriever = vectorstore.as_retriever(k=4)
 chat = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
 SYSTEM_TEMPLATE = """
-You are a student at IIT ISM Dhanbad. Answer the user's questions based on the below context. 
+You are chatbot to help students of IIT ISM Dhanbad. Answer the user's questions based on the below context. 
 If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know"
-But, if the context provide any information use that to answer the question along with your own knowledge in 75:25 ratio.
+But, if the context provide any information use that to answer the question along with your own knowledge in 7:3 ratio.
 <context>
 {context}
 </context>

@@ -14,10 +14,10 @@ USER_AVATAR = "👤"
 BOT_AVATAR = "🤖"
 
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "assistant", "content": "Hello! I am a student at IIT ISM Dhanbad. How can I help you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "How can I help you today?"}]
 
 if "LOG" not in st.session_state:
-    st.session_state.LOG = [{"role": "assistant", "content": "Hello! I am a student at IIT ISM Dhanbad. How can I help you today?"}]  
+    st.session_state.LOG = [{"role": "assistant", "content": "How can I help you today?"}]  
     
 for message in st.session_state.LOG:
     avatar = USER_AVATAR if message["role"] == "user" else BOT_AVATAR
